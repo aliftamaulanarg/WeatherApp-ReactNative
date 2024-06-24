@@ -12,6 +12,8 @@ import humidity_icon from '../assets/humidity.png'
 
 const Weather = () => {
 
+    const [weatherData, setWeatherData] = useState(false);
+
     const search = async (city) => {
         try {
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_APP_ID}`;
@@ -19,6 +21,8 @@ const Weather = () => {
             const response = await fetch(url);
             const data = await response.json();
             console.log(data);
+            setWeatherData({
+            })
 
         } catch (error) {
 
